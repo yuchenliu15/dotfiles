@@ -1,0 +1,10 @@
+set backspace=indent,eol,start
+set number
+set noswapfile
+set hlsearch
+set ignorecase
+set incsearch
+set ma
+set tabstop=4
+set autoindent
+set expandtab
