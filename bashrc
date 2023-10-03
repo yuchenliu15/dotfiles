@@ -39,7 +39,6 @@ shopt -s histappend
 PROMPT_COMMAND='history -a'
 
 # Allow ctrl-S for history navigation (with ctrl-R)
-stty -ixon
 
 # Ignore case on auto-completion
 # Note: bind used instead of sticking these in .inputrc
@@ -696,5 +695,28 @@ function __setprompt
 PROMPT_COMMAND='__setprompt'
 
 PATH=/usr/class/bin:$PATH
-
+PATH=/home/yuchen/anaconda3/bin:$PATH
 alias cdw='cd /home/yuchen/Work'
+alias vpn='/opt/cisco/anyconnect/bin/vpnui'
+alias aps='javac Main.java && java -cp . Main'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/yuchen/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/yuchen/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/yuchen/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/yuchen/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+. "$HOME/.cargo/env"
